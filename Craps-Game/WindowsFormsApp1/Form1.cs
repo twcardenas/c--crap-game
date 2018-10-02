@@ -15,7 +15,7 @@ namespace WindowsFormsApp1 {
         private int turn = 0;
         private Boolean gameOver = false;
 
-        private string connectionString = @"Server=localhost;Database=CrapsDB;Uid=root;Pwd=pwd;";
+        private string connectionString = @"Server=localhost;Database=CrapsDB;Uid=root;Pwd=Pass;";
         public Form1() {
             InitializeComponent();
         }
@@ -98,10 +98,15 @@ namespace WindowsFormsApp1 {
             using (MySqlConnection mysqlCon = new MySqlConnection(this.connectionString))
             {
                 mysqlCon.Open();
-                MySqlCommand mySqlCmd = new MySqlCommand("PlayerAddOrEdit", mysqlCon);
-                mySqlCmd.CommandType = CommandType.StoredProcedure;
-                mySqlCmd.Parameters.AddWithValue("Name", textBox1.Text.Trim());
-                mySqlCmd.ExecuteNonQuery();
+                MySqlCommand cmd = new MySqlCommand();
+
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.CommandText = "INSERT Players (PlayerName) VALUES (@name)";
+                cmd.Parameters.AddWithValue("@name", textBox1.Text.Trim());
+                cmd.Connection = mysqlCon;
+                cmd.ExecuteNonQuery();
+                mysqlCon.Close();
+                
                 MessageBox.Show("Person Added");
                 this.PlayerGridFill();
             }
@@ -113,11 +118,15 @@ namespace WindowsFormsApp1 {
             using (MySqlConnection mysqlCon = new MySqlConnection(this.connectionString))
             {
                 mysqlCon.Open();
-                MySqlDataAdapter sqlDa = new MySqlDataAdapter("PlayersViewAll", mysqlCon);
-                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+
+                var select = "SELECT * FROM Players";
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter(select, mysqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.Text;
+
                 DataTable dtblPlayers = new DataTable();
                 sqlDa.Fill(dtblPlayers);
                 dataGridView2.DataSource = dtblPlayers;
+                mysqlCon.Close();
             }
         }
 
