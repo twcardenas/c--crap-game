@@ -94,7 +94,42 @@ namespace WindowsFormsApp1 {
 
         //Add User to the DB and start the game
         private void button2_Click(object sender, EventArgs e) {
+            //Add the user to the DB
+            using (MySqlConnection mysqlCon = new MySqlConnection(this.connectionString))
+            {
+                mysqlCon.Open();
+                MySqlCommand mySqlCmd = new MySqlCommand("PlayerAddOrEdit", mysqlCon);
+                mySqlCmd.CommandType = CommandType.StoredProcedure;
+                mySqlCmd.Parameters.AddWithValue("Name", textBox1.Text.Trim());
+                mySqlCmd.ExecuteNonQuery();
+                MessageBox.Show("Person Added");
+                this.PlayerGridFill();
+            }
+        }
 
+        //Fill all players
+        void PlayerGridFill()
+        {
+            using (MySqlConnection mysqlCon = new MySqlConnection(this.connectionString))
+            {
+                mysqlCon.Open();
+                MySqlDataAdapter sqlDa = new MySqlDataAdapter("PlayersViewAll", mysqlCon);
+                sqlDa.SelectCommand.CommandType = CommandType.StoredProcedure;
+                DataTable dtblPlayers = new DataTable();
+                sqlDa.Fill(dtblPlayers);
+                dataGridView2.DataSource = dtblPlayers;
+            }
+        }
+
+        //The result of each round including the sum of each of their rolls, point
+        //(if set), and the win/lose/null result.
+        private void addTurnResults(int playerID, int sum, int point, string gameStatus) {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            this.PlayerGridFill();
         }
     }
 }
