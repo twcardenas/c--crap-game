@@ -28,131 +28,158 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.rollButton = new System.Windows.Forms.Button();
+            this.diceOnelabel = new System.Windows.Forms.Label();
+            this.statusLabel = new System.Windows.Forms.Label();
+            this.diceTwoLabel = new System.Windows.Forms.Label();
+            this.currentPointLabel = new System.Windows.Forms.Label();
+            this.playerNameBox = new System.Windows.Forms.TextBox();
+            this.CreateButton = new System.Windows.Forms.Button();
+            this.playerNameLabel = new System.Windows.Forms.Label();
+            this.pointGrid = new System.Windows.Forms.DataGridView();
+            this.playersGrid = new System.Windows.Forms.DataGridView();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.clearHistoryButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pointGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playersGrid)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // rollButton
             // 
-            this.button1.Location = new System.Drawing.Point(125, 230);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Roll";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.rollButton.Location = new System.Drawing.Point(125, 230);
+            this.rollButton.Name = "rollButton";
+            this.rollButton.Size = new System.Drawing.Size(75, 23);
+            this.rollButton.TabIndex = 0;
+            this.rollButton.Text = "Roll";
+            this.rollButton.UseVisualStyleBackColor = true;
+            this.rollButton.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label1
+            // diceOnelabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(237, 233);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Dice #1";
+            this.diceOnelabel.AutoSize = true;
+            this.diceOnelabel.Location = new System.Drawing.Point(237, 233);
+            this.diceOnelabel.Name = "diceOnelabel";
+            this.diceOnelabel.Size = new System.Drawing.Size(56, 17);
+            this.diceOnelabel.TabIndex = 1;
+            this.diceOnelabel.Text = "Dice #1";
             // 
-            // label2
+            // statusLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 233);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "TURN";
+            this.statusLabel.AutoSize = true;
+            this.statusLabel.Location = new System.Drawing.Point(29, 233);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(47, 17);
+            this.statusLabel.TabIndex = 2;
+            this.statusLabel.Text = "TURN";
             // 
-            // label3
+            // diceTwoLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(331, 233);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Dice #2";
+            this.diceTwoLabel.AutoSize = true;
+            this.diceTwoLabel.Location = new System.Drawing.Point(331, 233);
+            this.diceTwoLabel.Name = "diceTwoLabel";
+            this.diceTwoLabel.Size = new System.Drawing.Size(56, 17);
+            this.diceTwoLabel.TabIndex = 3;
+            this.diceTwoLabel.Text = "Dice #2";
             // 
-            // label4
+            // currentPointLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(417, 233);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Point: #";
+            this.currentPointLabel.AutoSize = true;
+            this.currentPointLabel.Location = new System.Drawing.Point(417, 233);
+            this.currentPointLabel.Name = "currentPointLabel";
+            this.currentPointLabel.Size = new System.Drawing.Size(56, 17);
+            this.currentPointLabel.TabIndex = 4;
+            this.currentPointLabel.Text = "Point: #";
             // 
-            // textBox1
+            // playerNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(29, 39);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(441, 22);
-            this.textBox1.TabIndex = 5;
+            this.playerNameBox.Location = new System.Drawing.Point(29, 39);
+            this.playerNameBox.Name = "playerNameBox";
+            this.playerNameBox.Size = new System.Drawing.Size(441, 22);
+            this.playerNameBox.TabIndex = 5;
             // 
-            // button2
+            // CreateButton
             // 
-            this.button2.Location = new System.Drawing.Point(491, 37);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Create New";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.CreateButton.Location = new System.Drawing.Point(491, 37);
+            this.CreateButton.Name = "CreateButton";
+            this.CreateButton.Size = new System.Drawing.Size(75, 23);
+            this.CreateButton.TabIndex = 6;
+            this.CreateButton.Text = "Create New";
+            this.CreateButton.UseVisualStyleBackColor = true;
+            this.CreateButton.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label5
+            // playerNameLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(29, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(89, 17);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Player Name";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.playerNameLabel.AutoSize = true;
+            this.playerNameLabel.Location = new System.Drawing.Point(29, 13);
+            this.playerNameLabel.Name = "playerNameLabel";
+            this.playerNameLabel.Size = new System.Drawing.Size(89, 17);
+            this.playerNameLabel.TabIndex = 7;
+            this.playerNameLabel.Text = "Player Name";
             // 
-            // dataGridView1
+            // pointGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 278);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(687, 150);
-            this.dataGridView1.TabIndex = 8;
+            this.pointGrid.AllowUserToAddRows = false;
+            this.pointGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pointGrid.Location = new System.Drawing.Point(29, 278);
+            this.pointGrid.Name = "pointGrid";
+            this.pointGrid.ReadOnly = true;
+            this.pointGrid.RowTemplate.Height = 24;
+            this.pointGrid.Size = new System.Drawing.Size(687, 150);
+            this.pointGrid.TabIndex = 8;
             // 
-            // dataGridView2
+            // playersGrid
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(29, 85);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(687, 129);
-            this.dataGridView2.TabIndex = 9;
+            this.playersGrid.AllowUserToAddRows = false;
+            this.playersGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.playersGrid.Location = new System.Drawing.Point(29, 85);
+            this.playersGrid.Name = "playersGrid";
+            this.playersGrid.RowTemplate.Height = 24;
+            this.playersGrid.Size = new System.Drawing.Size(687, 129);
+            this.playersGrid.TabIndex = 9;
+            this.playersGrid.DoubleClick += new System.EventHandler(this.dataGridView2_DoubleClick);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(587, 37);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteButton.TabIndex = 11;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // clearHistoryButton
+            // 
+            this.clearHistoryButton.Location = new System.Drawing.Point(603, 233);
+            this.clearHistoryButton.Name = "clearHistoryButton";
+            this.clearHistoryButton.Size = new System.Drawing.Size(113, 23);
+            this.clearHistoryButton.TabIndex = 12;
+            this.clearHistoryButton.Text = "Clear History";
+            this.clearHistoryButton.UseVisualStyleBackColor = true;
+            this.clearHistoryButton.Click += new System.EventHandler(this.button5_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.clearHistoryButton);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.playersGrid);
+            this.Controls.Add(this.pointGrid);
+            this.Controls.Add(this.playerNameLabel);
+            this.Controls.Add(this.CreateButton);
+            this.Controls.Add(this.playerNameBox);
+            this.Controls.Add(this.currentPointLabel);
+            this.Controls.Add(this.diceTwoLabel);
+            this.Controls.Add(this.statusLabel);
+            this.Controls.Add(this.diceOnelabel);
+            this.Controls.Add(this.rollButton);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pointGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playersGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,16 +187,18 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button rollButton;
+        private System.Windows.Forms.Label diceOnelabel;
+        private System.Windows.Forms.Label statusLabel;
+        private System.Windows.Forms.Label diceTwoLabel;
+        private System.Windows.Forms.Label currentPointLabel;
+        private System.Windows.Forms.TextBox playerNameBox;
+        private System.Windows.Forms.Button CreateButton;
+        private System.Windows.Forms.Label playerNameLabel;
+        private System.Windows.Forms.DataGridView pointGrid;
+        private System.Windows.Forms.DataGridView playersGrid;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.Button clearHistoryButton;
     }
 }
 
